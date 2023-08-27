@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css ">
+     <!-- Include SweetAlert CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
     <title>Document</title>
 </head>
 
@@ -31,10 +33,6 @@
     <button onclick="move()">Click Me</button>
     </div>
 </div>
-
-
-
-
 
 
     <div class="navigatebg">
@@ -129,7 +127,28 @@
     <img src="./loading.gif"  alt="">
 </div>
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const storedUserName = localStorage.getItem('userName'); // Retrieve from localStorage
+
+    if (storedUserName) {
+        // Use the userName in your logic
+        console.log(storedUserName);
+    } else {
+        // User name not found
+    }
+});
+
+
+</script>
+
+
+
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>
 </body>
 
 </html>

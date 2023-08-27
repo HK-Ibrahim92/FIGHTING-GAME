@@ -208,8 +208,8 @@
     width: 140px;
     height: 40px;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    /* align-items: center; */
+    
     gap: 10px;
     padding: 0px 15px;
     background-color: red;
@@ -266,7 +266,108 @@
     transition-duration: .2s;
   }
 
+/* Styles for the title */
+.title {
+  font-size: 3rem;
+  color: #FF5733;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-top: 100px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.main-element{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}  
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/your/background-image.jpg') center/cover no-repeat;
+  filter: blur(8px);
+  opacity: 0.6;
+  z-index: -1;
   
+}
+
+/* Styles for the title container */
+.title-container {
+  position: absolute;
+  top: 10%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Styles for the title */
+.title {
+  font-size: 6rem;
+  color: #FF5733;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the subtitle */
+.subtitle {
+  font-size: 1.5rem;
+  color: #FFC300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.title-container {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translate(-50%, 20%);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .title {
+      font-size: 3rem; /* Decrease font size for smaller screens */
+  }
+
+  .subtitle {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+  }
+}
+
+@media (min-width: 769px){
+  .charac1 img{
+    height: 18rem;
+  }
+  .charac2 img{
+    height: 18rem;
+  }
+}
+/*------ MAIN SCREEN CHARACTER---------- */
+
+.main-screen-chracter{
+  display: flex;
+  
+  justify-content: space-around;
+width: 100%;
+  position: absolute;
+  top: 60%;
+  
+  
+}
+
 
  .loader{
   display: flex;
