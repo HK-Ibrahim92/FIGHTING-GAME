@@ -3,11 +3,11 @@ var imagesrc = ["https://media2.giphy.com/media/7XqRXKYV9odtm/giphy.gif?cid=ecf0
 var count = 0;
 let userName;
 var body = document.getElementById("body")
-
+var character1 = document.querySelector(".character1")
 
 
 // Wait for the DOM to be fully loaded
- function username() {
+function username() {
     // Use SweetAlert to prompt for user's name
     Swal.fire({
         title: 'Enter Your Name',
@@ -25,8 +25,8 @@ var body = document.getElementById("body")
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            
-             userName = result.value;
+
+            userName = result.value;
             // Now you can use the userName in your game
             localStorage.setItem('userName', userName);
             gotologin()
@@ -73,11 +73,10 @@ function backbg() {
 function gotologin() {
     window.location.href = "main.html"
     swal({
-        title: "Hello!"+storedUserName+"!",
-        
+        title: "Hello!" + storedUserName + "!",
         timer: 2000
-      });
-      
+    });
+
 }
 function gamestart() {
     var playerInfo = document.querySelector('.playerinfo');
@@ -92,5 +91,252 @@ function gamestart() {
         loader.style.display = 'none'
     }, 2000);
     console.log("running")
+
+    var progressbar = document.querySelector(".progressbar")
+
+    progressbar.style.visibility = 'visible'
 };
+document.addEventListener("DOMContentLoaded", function () {
+    const storedUserName = localStorage.getItem('userName'); // Retrieve from localStorage
+
+    if (storedUserName) {
+
+        console.log(storedUserName);
+    } else {
+        // User name not found
+    }
+});
+
+//-------------check position--------------
+
+
+// Calculate the distance between two characters
+function calculateDistance(x1, x2) {
+    return Math.abs(x1 - x2);
+}
+
+// Check for proximity and show injured image
+function checkProximityAndShowInjured1() {
+    var distance = calculateDistance(value1, value2);
+
+    if (distance < 50 && distance !=0) { // Adjust the proximity threshold as needed
+        // Show injured image for character 1
+     console.log("near")
+     
+             // Increase the size of the image without changing its position
+             character1.style.transformOrigin = "center center";
+             character1.style.transform = "scale(2)"; // You can adjust the sca
+     
+        character1.src = "CHARACTER/spidermen/spidey-throw-player.gif";
+        character2.src=""
+        move();
+    
+        setTimeout(function () {
+            Swal.fire({
+                title: "Yahoo..!",
+                text: "Player 1 win",
+                timer: 3000
+            });
+        }, 1500);
+    
+    
+    }
+    
+}
+
+
+function checkProximityAndShowInjure2() {
+    var distance = calculateDistance(value1, value2);
+
+    if (distance < 50 && distance !=0) { // Adjust the proximity threshold as needed
+        // Show injured image for character 1
+        character1.src = "CHARACTER/spidermen/spidey-injured.gif";
+        move();
+    }
+}
+
+
+
+
+
+//----------CHARACTER 1---------------
+
+var value1=0;
+
+var character1 = document.querySelector(".character1");
+var originalSrc1 = character1.src; // Store the original image source
+
+window.addEventListener("keydown", function (event) {
+     console.log(event.keyCode)
+    
+     if (event.keyCode === 83) {
+        character1.src = "CHARACTER/spidermen/spidey-walk1.gif";
+        
+        if(value1>0){
+            value1 = value1 - 25;
+     
+        }
+        
+        console.log("val1:"+value1);
+        console.log("val2:"+value2);
+        character1.style.left = value1 + "px";
+
+        setTimeout(function () {
+            // Revert to the original image after 5 seconds
+            character1.src = originalSrc1;
+        }, 1000);
+    }
+    
+    
+     if (event.keyCode === 70) {
+        character1.src = "CHARACTER/spidermen/spidey-walk1.gif";
+        value1 = value1 + 25;
+        console.log("val1:"+value1);
+        console.log("val2:"+value2);
+        character1.style.left = value1 + "px";
+
+        setTimeout(function () {
+            // Revert to the original image after 5 seconds
+            character1.src = originalSrc1;
+        }, 1000);
+    }
+    if(event.keyCode===68){    
+        value1 =value1;
+        // console.log(value1);
+        character1.style.left = value1 + "px";
+
+        checkProximityAndShowInjured1()
+        setTimeout(function () {
+
+            character1.style.transformOrigin = "initial"; // Revert the transform origin
+            character1.style.transform = "initial";
+
+            character1.src = originalSrc1;
+        }, 1500);
+ 
+    
+    }
+    
+    if (event.keyCode === 69) {
+
+    
+        // Increase the size of the image without changing its position
+        character1.style.transformOrigin = "center center";
+        character1.style.transform = "scale(2)"; // You can adjust the sca
+
+        character1.src = "CHARACTER/spidermen/spider-jump.gif";
+        value1 =value1;
+        // console.log(value1);
+        character1.style.left = value1 + "px";
+
+    
+        setTimeout(function () {
+
+            character1.style.transformOrigin = "initial"; // Revert the transform origin
+            character1.style.transform = "initial";
+
+            character1.src = originalSrc1;
+        }, 1500);
+    }
+    if (event.keyCode === 67) {
+        character1.src = "CHARACTER/spidermen/spidey-kick.gif";
+        value1 = value1 ;
+        // console.log(value1);
+        character1.style.left = value1 + "px";
+
+        setTimeout(function () {
+            // Revert to the original image after 5 seconds
+            character1.src = originalSrc1;
+        }, 1000);
+    }
+
+});
+
+
+
+
+
+//----------CHARACTER 2---------------
+
+var value2=0;
+
+var character2 = document.querySelector("#character2");
+var originalSrc2 = character2.src; // Store the original image source
+
+window.addEventListener("keydown", function (event) {
+    
+    if (event.keyCode === 39) {
+        character2.src = "CHARACTER/captain-america/captain-america-walk.gif";
+        // console.log(value2);
+        if(value2>0){
+            value2 = value2 - 25;
+     
+        }
+        character2.style.right = value2 + "px";
+        character2.style.transform='scaleX(-1)'; 
+
+        console.log("val1:"+value1)
+        console.log("val2:"+value2)
+        
+        setTimeout(function () {
+            // Revert to the original image after 5 seconds
+            character2.src = originalSrc2;
+        }, 1000);
+    }
+
+
+    if (event.keyCode === 37) {
+        character2.src = "CHARACTER/captain-america/captain-america-walk.gif";
+        // console.log(value2);
+        value2 = value2 + 25;
+        character2.style.right = value2 + "px";
+        character2.style.transform='scaleX(-1)'; 
+
+        console.log("val1:"+value1)
+        console.log("val2:"+value2)
+        
+
+        setTimeout(function () {
+            // Revert to the original image after 5 seconds
+            character2.src = originalSrc2;
+        }, 1000);
+    }
+    if (event.keyCode === 38) {
+
+        // Increase the size of the image without changing its position
+        // character2.style.transformOrigin = "center center";
+        // character2.style.transform = "scale(2)"; // You can adjust the sca
+
+        character2.src = "CHARACTER/captain-america/captainamerica-chargingstar.gif";
+        value2 = value2;
+        // console.log(value2);
+        character2.style.right = value2 + "px";
+        character2.style.transform='scaleX(-1)'
+
+
+        setTimeout(function () {
+
+            // character2.style.transformOrigin = "initial"; // Revert the transform origin
+            // character2.style.transform = "initial";
+
+            character2.src = originalSrc2;
+        }, 1000);
+        checkProximityAndShowInjure2();    
+    }
+    if (event.keyCode === 40) {
+        character2.src = "CHARACTER/captain-america/captainamerica-down.gif";
+        value2 = value2;
+        // console.log(value2);
+        character2.style.right = value2 + "px";
+        character2.style.transform='scaleX(1)'
+
+        setTimeout(function () {
+            // Revert to the original image after 5 seconds
+            character2.src = originalSrc2;
+            character2.style.transform='scaleX(-1)'
+
+        }, 1000);
+    }
+});
+
 

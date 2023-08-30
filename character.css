@@ -1,0 +1,17 @@
+.chracters img{
+
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 15rem; 
+    top: 65%;
+
+}
+
+#character2 {
+    /* top: 70%;  */
+    height: 15rem;
+    transform: scaleX(-1);
+    right: 20px;
+
+}

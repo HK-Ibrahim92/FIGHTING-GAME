@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css ">
      <!-- Include SweetAlert CSS -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
-    <title>Document</title>
+   <link rel="stylesheet" href="./character.css">
+     <title>Document</title>
 </head>
 
 <body id="body">
@@ -18,15 +19,18 @@
     
     <div class="pbplayer1">
     <div id="myProgress">
+    <h2 id="score-text">PLAYER 1</h2>
         <div id="mybar"></div>
     </div>
-    <br>
-    <button onclick="move()">Click Me</button>
+    
     </div>
-
+<div class="vs">
+    <img height="80px" style="border-radius: 1rem;" src="./vs.jpg" alt="">
+</div>
     <div class="pbplayer2">
         
     <div id="myProgress">
+        <h2 id="score-text">PLAYER 2</h2>
         <div id="mybar"></div>
     </div>
     <br>
@@ -128,23 +132,20 @@
 </div>
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const storedUserName = localStorage.getItem('userName'); // Retrieve from localStorage
+<div class="chracters">
+    <div  >
+        <img class="character1" src="./CHARACTER/spidermen/spidet-taunt2.gif" alt="">
 
-    if (storedUserName) {
-        // Use the userName in your logic
-        console.log(storedUserName);
-    } else {
-        // User name not found
-    }
-});
+    </div>
+    <div >
+        <img style="transform:'scaleX(-1)" id="character2" 
+         src="./CHARACTER/captain-america/captain-america-stand.gif" alt="">
 
+    </div>
+</div>
 
-</script>
-
-
-
+<img src="./" alt="">
+<img src="./" alt="">
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 </body>
