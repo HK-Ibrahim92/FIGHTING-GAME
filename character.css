@@ -6,12 +6,20 @@
     height: 15rem; 
     top: 65%;
 
+
 }
+
+.character1{
+visibility: hidden;
+}
+
+
 
 #character2 {
     /* top: 70%;  */
     height: 15rem;
     transform: scaleX(-1);
     right: 20px;
+    visibility: hidden;
 
 }

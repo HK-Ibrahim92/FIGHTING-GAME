@@ -29,7 +29,8 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 1rem;
- visibility: none; 
+ visibility: hidden;
+
 }
 
 .pbplayer1 {
@@ -63,6 +64,15 @@ color: brown;
   border-radius: 10rem;
   border: 2px solid darkred;
 }
+#mybar2 {
+  
+  width: 1%;
+  height: 25px;
+  background-color: chocolate;
+  border-radius: 10rem;
+  border: 2px solid darkred;
+}
+
 
 .navigatebg{
     display: flex;
@@ -387,9 +397,8 @@ width: 100%;
   
 }
 
-
  .loader{
   display: flex;
   justify-content: center;
- 
- }
+display: none; 
+ } 
