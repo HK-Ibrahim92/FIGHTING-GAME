@@ -99,7 +99,7 @@ function changebg() {
     count = count + 1;
     if (count < imagesrc.length) {
         body.style.backgroundImage = "url('" + imagesrc[count] + "')";
-        console.log("next" + count)
+        // console.log("next" + count)
     } else {
         alert("finish")
     }
@@ -107,11 +107,12 @@ function changebg() {
 
 function backbg() {
     count = count - 1;
-    if (count < imagesrc.length) {
-        body.style.backgroundImage = "url('" + imagesrc[count] + "')";
-        console.log("back" + count)
-    } else {
+    if (count<0) {
+        
         alert("finish")
+    } else {
+        body.style.backgroundImage = "url('" + imagesrc[count] + "')";
+        // console.log("back" + count)
     }
 }
 
@@ -140,7 +141,7 @@ function gotologin() {
 function gamestart() {
     var playerInfo = document.querySelector('.playerinfo');
     playerInfo.style.display = 'none';
-
+    classicclick.play();
     var playbtn = document.querySelector('.playbtn');
     playbtn.style.display = 'none';
 
@@ -184,6 +185,7 @@ function checkProximityAndShowInjured1() {
         character1.src = "CHARACTER/spidermen/spidey-throw-player.gif";
         character2.src = ""
         spideypunch.play();
+        finalcry.play();
         move2()
     }
     setTimeout(function () {

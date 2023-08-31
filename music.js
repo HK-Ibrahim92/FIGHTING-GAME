@@ -15,7 +15,7 @@ var punch=document.getElementById("punch")
 var punchimpact=document.getElementById("punchimpact")
 var spideypunch=document.getElementById("spideypunch")
 var finalcry=document.getElementById("finalcry")
-
+var classicclick=document.getElementById("classic-click")
 var music_card = document.querySelector(".align");
 
 music_card.addEventListener("mouseover", function () {
