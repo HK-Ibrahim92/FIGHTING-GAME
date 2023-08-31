@@ -8,9 +8,7 @@ body{
      */
       min-height: 100vh;
      
-
 }
-
 
 .btn {
     
@@ -28,8 +26,6 @@ body{
       inset 0 0 0px 1px #F11271,
       inset 0 0 10px 2px #FD3084;
     transition: 100ms;
-    
-
   }
   
   .btn:hover {
@@ -48,7 +44,3 @@ body{
       inset 0 0 30px 2px #FD3084;
     transform: translateY(1px);
   }
-
-
-
-
